@@ -16,6 +16,8 @@ on:
           - foo
           - bar
           - baz
+      input:
+        description: choice env
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
