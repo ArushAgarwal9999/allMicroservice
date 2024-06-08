@@ -3,21 +3,17 @@ run-name: ${{ github.actor }} is testing out GitHub Actions
 on:
   workflow_dispatch:
     inputs:
-      environment:
-        type: environment
-        description: Select the environment
-      boolean:
-        type: boolean
-        description: True or False
+      input:
+        description: Enter environment
       choice:
         type: choice
-        description: Make a choice
+        description: Select Application
         options:
-          - foo
-          - bar
-          - baz
-      input:
-        description: choice env
+          - All
+          - Accounts
+          - Cards
+          - Loans
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
