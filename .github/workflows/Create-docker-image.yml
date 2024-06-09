@@ -8,8 +8,8 @@ on:
 jobs:
   triage:
     runs-on: ubuntu-latest
-      steps:
-      - name: create image
-        run: echo "github.event.inputs.dockerfile-path"
+    steps:
+    - name: create image
+      run: echo "github.event.inputs.dockerfile-path"
 
 
