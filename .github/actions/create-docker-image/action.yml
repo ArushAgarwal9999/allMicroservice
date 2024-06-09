@@ -1,15 +1,14 @@
 name: create Docker Image
-on:
-  workflow_call:
-    inputs:
-      dockerfile-path:
-        required: true
-
-jobs:
-  triage:
-    runs-on: ubuntu-latest
-    steps:
+description: "A composite action that combines multiple steps"
+inputs:
+  dockerfile-path:
+    description: "Reqired"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
     - name: create image
-      run: echo "github.event.inputs.dockerfile-path"
-
+      run: echo "inputs.dockerfile-path"
 
