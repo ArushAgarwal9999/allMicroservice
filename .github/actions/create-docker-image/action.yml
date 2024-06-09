@@ -11,5 +11,5 @@ runs:
       uses: actions/checkout@v2
     - name: create image
       shell: bash
-      run: echo "inputs.dockerfile-path"
+      run: echo ${{inputs.dockerfile-path}}
 
