@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Deploy Account Applications
         if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Accounts' }}
-        uses: dockerfile-path
+        uses: .github/workflows/Create-docker-image.yml
         with:
           dockerfile-path: accounts/Dockerfile
       - name: Deploy Cards Applications
