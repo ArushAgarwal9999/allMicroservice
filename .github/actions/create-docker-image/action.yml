@@ -10,5 +10,6 @@ runs:
     - name: Checkout Repository
       uses: actions/checkout@v2
     - name: create image
+      shell: bash
       run: echo "inputs.dockerfile-path"
 
