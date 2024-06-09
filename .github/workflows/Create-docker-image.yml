@@ -1,0 +1,15 @@
+name: create Docker Image
+on:
+  workflow_call:
+    inputs:
+      dockerfile-path:
+        required: true
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+      steps:
+        -name: create image
+         run: echo "github.event.inputs.dockerfile-path"
+
+
