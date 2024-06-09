@@ -1,4 +1,4 @@
-name: test
+name: Build Applications
 run-name: ${{ github.actor }} is testing out GitHub Actions
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ on:
           - Cards
           - Loans
 jobs:
-  Build-Applications:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
