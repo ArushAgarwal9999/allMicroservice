@@ -20,6 +20,6 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
       - name: Deploy Account App
-        if: ${{ github.event.inputs.select_app == "All" || github.event.inputs.select_app == "Accounts" }}
+        if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Accounts' }}
         run : echo "Account run"
 
