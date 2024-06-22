@@ -39,4 +39,5 @@ runs:
       uses: docker/build-push-action@v5
       with:
         push: true
+        file: ${{ inputs.dockerfile-path }}
         tags: arushagarwal405/${{ inputs.docker-image-name }}:s4
