@@ -17,7 +17,7 @@ jobs:
 #    runs-on: ubuntu-latest
     my-job:
 #      if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Accounts' }}
-      uses: ./.github/actions/create-docker-image
+      uses: ./.github/actions/create-docker-image.yml
       with:
         dockerfile-path: accounts/Dockerfile
         docker-image-name: accounts
