@@ -4,6 +4,9 @@ inputs:
   dockerfile-path:
     description: "Reqired"
     required: true
+  docker-image-name:
+    description: "Reqired"
+    required: true
 runs:
   using: "composite"
   steps:
@@ -19,4 +22,8 @@ runs:
     - name: create image
       shell: bash
       run: echo ${{inputs.dockerfile-path}}
-
+    - name: Build and push
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ inputs.dockerfile-path }}:s4

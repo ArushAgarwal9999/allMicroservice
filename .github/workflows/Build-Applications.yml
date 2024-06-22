@@ -23,6 +23,7 @@ jobs:
         uses: ./.github/actions/create-docker-image
         with:
           dockerfile-path: accounts/Dockerfile
+          docker-image-name: accounts
       - name: Deploy Cards Applications
         if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Cards' }}
         run: echo "Cards run"
