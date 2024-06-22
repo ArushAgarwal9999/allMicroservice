@@ -16,12 +16,11 @@ jobs:
 #  Build:
 #    runs-on: ubuntu-latest
     my-job:
-      - name: Deploy Account Applications
-        if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Accounts' }}
-        uses: ./.github/actions/create-docker-image
-        with:
-          dockerfile-path: accounts/Dockerfile
-          docker-image-name: accounts
+      if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Accounts' }}
+      uses: ./.github/actions/create-docker-image
+      with:
+        dockerfile-path: accounts/Dockerfile
+        docker-image-name: accounts
 #    steps:
 #      - name: Deploy Account Applications
 #        if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Accounts' }}
