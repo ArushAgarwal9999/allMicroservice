@@ -13,8 +13,8 @@ on:
           - Cards
           - Loans
 jobs:
-#  Build:
-#    runs-on: ubuntu-latest
+  Build:
+    runs-on: ubuntu-latest
     my-job:
       if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Accounts' }}
       uses: ./.github/actions/create-docker-image
