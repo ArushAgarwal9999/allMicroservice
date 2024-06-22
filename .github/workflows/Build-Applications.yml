@@ -24,6 +24,7 @@ jobs:
         with:
           dockerfile-path: accounts/Dockerfile
           docker-image-name: accounts
+        secrets: inherit
       - name: Deploy Cards Applications
         if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Cards' }}
         run: echo "Cards run"
