@@ -7,6 +7,12 @@ inputs:
   docker-image-name:
     description: "Reqired"
     required: true
+  docker-user-name:
+    description: "Reqired"
+    required: true
+  docker-password:
+    description: "Reqired"
+    required: true
 runs:
   using: "composite"
   steps:
@@ -23,7 +29,7 @@ runs:
       run: mvn -B package --file accounts/pom.xml
     - name: create image
       shell: bash
-      run: echo ${{inputs.dockerfile-path}} ${{ secrets.DOCKERHUB_USERNAME }}
+      run: echo ${{inputs.dockerfile-path}} ${{ inputs.docker-user-name }}
 
 #    - name: Login to Docker Hub
 #      uses: docker/login-action@v3
