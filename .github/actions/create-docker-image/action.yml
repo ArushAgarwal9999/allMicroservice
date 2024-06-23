@@ -49,7 +49,10 @@ runs:
         password: ${{ inputs.docker-password }}
     - name: Build image
       shell: bash
-      run: docker build . -t arushagarwal405/accounts:s4  --file accounts/Dockerfile
+      run: docker build . -t arushagarwal405/{{ inputs.docker-image-name }}:s4  --file ${{ inputs.dockerfile-path }}
+    - name: push image
+      shell: bash
+      run: docker push arushagarwal405/{{ inputs.docker-image-name }}:s4
 #    - name: Build and push
 #      uses: docker/build-push-action@v5
 #      with:
