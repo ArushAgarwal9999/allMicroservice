@@ -47,9 +47,12 @@ runs:
       with:
         username: ${{ inputs.docker-user-name }}
         password: ${{ inputs.docker-password }}
-    - name: Build and push
-      uses: docker/build-push-action@v5
-      with:
-        push: true
-        file: ${{ inputs.dockerfile-path }}
-        tags: arushagarwal405/${{ inputs.docker-image-name }}:s4
+    - name: Build image
+      shell: bash
+      run: docker build . -t arushagarwal405/accounts:s4  --file accounts/Dockerfile
+#    - name: Build and push
+#      uses: docker/build-push-action@v5
+#      with:
+#        push: true
+#        file: ${{ inputs.dockerfile-path }}
+#        tags: arushagarwal405/${{ inputs.docker-image-name }}:s4
