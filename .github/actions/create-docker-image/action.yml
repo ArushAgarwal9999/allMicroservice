@@ -30,6 +30,9 @@ runs:
     - name: create image
       shell: bash
       run: echo ${{ inputs.docker-user-name }}
+    - name: Clear Docker builder cache
+      shell: bash
+      run: docker builder prune -f
     - name: Print working directory
       shell: bash
       run: pwd
