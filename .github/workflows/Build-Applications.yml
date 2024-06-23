@@ -29,16 +29,16 @@ jobs:
       - name: Deploy Cards Applications
         if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Cards' }}
         uses: ./.github/actions/create-docker-image
-          with:
-            dockerfile-path: cards/Dockerfile
-            docker-image-name: cards
-            docker-user-name: ${{ secrets.DOCKERHUB_USERNAME }}
-            docker-password: ${{ secrets.DOCKERHUB_TOKEN }}
+        with:
+          dockerfile-path: cards/Dockerfile
+          docker-image-name: cards
+          docker-user-name: ${{ secrets.DOCKERHUB_USERNAME }}
+          docker-password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Deploy Loans Applications
         if: ${{ github.event.inputs.select_app == 'All' || github.event.inputs.select_app == 'Loans' }}
         uses: ./.github/actions/create-docker-image
-          with:
-            dockerfile-path: loans/Dockerfile
-            docker-image-name: loans
-            docker-user-name: ${{ secrets.DOCKERHUB_USERNAME }}
-            docker-password: ${{ secrets.DOCKERHUB_TOKEN }}
+        with:
+          dockerfile-path: loans/Dockerfile
+          docker-image-name: loans
+          docker-user-name: ${{ secrets.DOCKERHUB_USERNAME }}
+          docker-password: ${{ secrets.DOCKERHUB_TOKEN }}
